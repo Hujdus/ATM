@@ -1,0 +1,28 @@
+
+tranzakcje = []
+
+WYBOR = None
+
+while WYBOR != '0':
+    print('0 koniec operacji\n1 Wplac kase\n2 Wyplac kase\n3 Sprawdz saldo\n4 Wplywy\n5 3 Ostatnie tranzakcje')
+    WYBOR = input('Wybierz opcje : ')
+
+    if WYBOR == '1' :
+        kwota = input('Podaj kwote do wpłaty : ')
+        tranzakcje.append(int(kwota))
+    elif WYBOR == '2' :
+        kwota = input('Podaj kwote do wypłaty : ')
+        tranzakcje.append(-int(kwota))
+    elif WYBOR == '3' :
+        SALDO = sum(tranzakcje)
+        print(SALDO)
+    elif WYBOR == '4' :
+        wplywy = []
+        for kwota in tranzakcje :
+            if kwota > 0 :
+                wplywy.append(kwota)
+        print(sum(wplywy))
+    elif WYBOR == '5':
+        print(tranzakcje[-3 :])
+    
+    #print(tranzakcje)
